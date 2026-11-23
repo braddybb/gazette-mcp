@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gazette for AI assistants — ask about your local area</title>
+<meta name="description" content="Gazette's official MCP server. Connect your AI assistant to independent local news from Gazette's mastheads, with credit and links back to every story.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#16181d; --muted:#5a606b; --line:#e3e5ea; --paper:#fbfaf7; --card:#fff; --accent:#75d6f1; --accent2:#fcdb3b; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Source Sans 3","Source Sans Pro",system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; font-size:18px; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 22px 80px; }
+  h1, h2 { font-family: Calistoga, Georgia, serif; font-weight: 400; line-height: 1.15; }
+  h1 { font-size: clamp(34px, 6vw, 52px); margin: 0 0 14px; }
+  h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--accent2) 62%); }
+  h2 { font-size: 26px; margin: 48px 0 12px; }
+  .lede { font-size: 21px; color: var(--muted); margin: 0 0 32px; }
+  .url { display:flex; gap:8px; align-items:center; background:var(--card); border:2px solid var(--ink); border-radius:12px; padding:10px 10px 10px 16px; }
+  .url code { flex:1; font-size:17px; overflow-wrap:anywhere; }
+  button { font: inherit; font-weight:700; background:var(--accent); border:0; border-radius:8px; padding:8px 14px; cursor:pointer; }
+  .small { font-size: 15px; color: var(--muted); }
+  ol, ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  details { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:10px 0; }
+  summary { font-weight:700; cursor:pointer; }
+  table { width:100%; border-collapse: collapse; font-size:16px; }
+  td { border-top:1px solid var(--line); padding:8px 6px; vertical-align: top; }
+  td:first-child { font-weight:600; white-space: nowrap; }
+  pre { background:#f1f2f4; border-radius:8px; padding:12px; overflow:auto; font-size:14px; }
+  footer { margin-top:56px; padding-top:18px; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ask your AI assistant. <em>Get your local paper's answer.</em></h1>
+  <p class="lede">Connect Claude, ChatGPT or another AI assistant to Gazette's independent local journalism. When you ask about your suburb, your council or what's on nearby, it can answer from our reporting and link you straight to the story.</p>
+
+  <div class="url"><code id="u">https://mcp.gazettenews.au/mcp</code><button id="copy" type="button">Copy</button></div>
+  <p class="small">This is the <strong>only official address</strong> for Gazette's server. It's free, read-only and needs no sign-in. You don't need an account and we never ask for your details.</p>
+
+  <h2>Connect it</h2>
+  <details open><summary>Claude (web or desktop)</summary>
+    <ol><li>Go to <strong>Settings → Connectors → Add custom connector</strong>.</li><li>Name it "Gazette" and paste the URL above.</li><li>Ask something like: <em>"What's happening in Chatswood this week?"</em></li></ol>
+  </details>
+  <details><summary>ChatGPT</summary>
+    <ol><li>Turn on <strong>Developer mode</strong> in Settings → Connectors → Advanced.</li><li>Create a connector with the URL above and no authentication.</li></ol>
+    <p class="small">Some plans limit custom connectors.</p>
+  </details>
+  <details><summary>Claude Code, Cursor, VS Code, Gemini CLI</summary>
+    <pre>claude mcp add --transport http gazette https://mcp.gazettenews.au/mcp</pre>
+    <p class="small">For other tools, add an HTTP MCP server with the same URL.</p>
+  </details>
+
+  <h2>What your assistant can do</h2>
+  <table>
+    <tr><td>local_news</td><td>Recent stories for a suburb, town or council, from the masthead that covers it</td></tr>
+    <tr><td>search_stories</td><td>Search our recent reporting by topic</td></tr>
+    <tr><td>latest</td><td>The newest stories across Gazette or from one masthead</td></tr>
+    <tr><td>get_story</td><td>A short excerpt and link for one story</td></tr>
+    <tr><td>list_mastheads</td><td>Our mastheads and the areas they cover</td></tr>
+  </table>
+
+  <h2>Our mastheads</h2>
+  <ul>
+    <li><strong>The Eastern Melburnian</strong>: Manningham, Maroondah, Whitehorse, Monash and Knox</li>
+    <li><strong>The North Shore Lorikeet</strong>: Hornsby, Ku-ring-gai, Lane Cove, Hunters Hill, Willoughby and North Sydney</li>
+    <li><strong>The West Vic Brolga</strong>: Ballarat and Wannon editions</li>
+    <li><strong>The Gippsland Monitor</strong></li>
+    <li><strong>The Mid North Coaster</strong>: Coffs Harbour to the Mid Coast</li>
+    <li><strong>The Moreton Bay Bugle</strong>: Moreton Bay</li>
+    <li><strong>National Account</strong></li>
+  </ul>
+
+  <h2>Terms</h2>
+  <ul>
+    <li><strong>Credit us.</strong> When an assistant uses our reporting, it should name the masthead and link the story.</li>
+    <li><strong>Excerpts only.</strong> Assistants get a short excerpt, not the full story. Read the whole thing on our site, where it's free.</li>
+    <li><strong>No training and no bulk copying.</strong> You may not use this server to copy our archive or to train or fine-tune AI models. We grant no training licence.</li>
+    <li><strong>Fair use.</strong> Requests are rate-limited. We may slow or block traffic that looks abusive.</li>
+    <li><strong>As is.</strong> The service may change or be withdrawn. Stories reflect what we knew when we published them.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>We log which tool was used and an anonymised visitor code. The code is a scrambled version of your IP address, it changes daily, and it's used only for rate limiting and counting usage. We don't log your name, your email or your full IP address. By default we don't log the text of your questions either.</p>
+
+  <footer class="small">Gazette is an independent Australian local news publisher. <a href="https://www.gazettenews.au/">gazettenews.au</a></footer>
+</main>
+<script>
+  document.getElementById("copy").onclick = async (e) => {
+    try { await navigator.clipboard.writeText(document.getElementById("u").textContent); e.target.textContent = "Copied"; } catch {}
+  };
+</script>
+</body>
+</html>
