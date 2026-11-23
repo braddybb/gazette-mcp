@@ -91,7 +91,7 @@ export const EXCERPT_CHARS = 320;
 
 // Official URLs — shown in server info so assistants and readers can verify.
 export const OFFICIAL = {
-  server: "https://mcp.gazettenews.au/mcp",
-  info: "https://mcp.gazettenews.au",
+  server: "https://gazette-mcp.netlify.app/mcp",
+  info: "https://gazette-mcp.netlify.app",
   publisher: "Gazette (gazettenews.au)",
 };
