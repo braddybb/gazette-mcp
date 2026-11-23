@@ -37,19 +37,19 @@
   <h1>Ask your AI assistant. <em>Get your local paper's answer.</em></h1>
   <p class="lede">Connect Claude, ChatGPT or another AI assistant to Gazette's independent local journalism. When you ask about your suburb, your council or what's on nearby, it can answer from our reporting and link you straight to the story.</p>
 
-  <div class="url"><code id="u">https://mcp.gazettenews.au/mcp</code><button id="copy" type="button">Copy</button></div>
+  <div class="url"><code id="u">https://gazette-mcp.netlify.app/mcp</code><button id="copy" type="button">Copy</button></div>
   <p class="small">This is the <strong>only official address</strong> for Gazette's server. It's free, read-only and needs no sign-in. You don't need an account and we never ask for your details.</p>
 
   <h2>Connect it</h2>
   <details open><summary>Claude (web or desktop)</summary>
-    <ol><li>Go to <strong>Settings → Connectors → Add custom connector</strong>.</li><li>Name it "Gazette" and paste the URL above.</li><li>Ask something like: <em>"What's happening in Chatswood this week?"</em></li></ol>
+    <ol><li>Go to <strong>Customize → Connectors → Add custom connector</strong>. (On Team or Enterprise plans, an Owner adds it in Organization settings.)</li><li>Name it "Gazette" and paste the URL above.</li><li>Ask something like: <em>"What's happening in Chatswood this week?"</em></li></ol>
   </details>
   <details><summary>ChatGPT</summary>
     <ol><li>Turn on <strong>Developer mode</strong> in Settings → Connectors → Advanced.</li><li>Create a connector with the URL above and no authentication.</li></ol>
     <p class="small">Some plans limit custom connectors.</p>
   </details>
   <details><summary>Claude Code, Cursor, VS Code, Gemini CLI</summary>
-    <pre>claude mcp add --transport http gazette https://mcp.gazettenews.au/mcp</pre>
+    <pre>claude mcp add --transport http gazette https://gazette-mcp.netlify.app/mcp</pre>
     <p class="small">For other tools, add an HTTP MCP server with the same URL.</p>
   </details>
 
