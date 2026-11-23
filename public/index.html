@@ -45,12 +45,14 @@
     <ol><li>Go to <strong>Customize → Connectors → Add custom connector</strong>. (On Team or Enterprise plans, an Owner adds it in Organization settings.)</li><li>Name it "Gazette" and paste the URL above.</li><li>Ask something like: <em>"What's happening in Chatswood this week?"</em></li></ol>
   </details>
   <details><summary>ChatGPT</summary>
-    <ol><li>Turn on <strong>Developer mode</strong> in Settings → Connectors → Advanced.</li><li>Create a connector with the URL above and no authentication.</li></ol>
-    <p class="small">Some plans limit custom connectors.</p>
+    <ol><li>Go to <strong>Settings → Apps → Advanced settings</strong> and turn on <strong>Developer mode</strong>.</li><li>Back in <strong>Settings → Apps</strong>, click <strong>Create app</strong>, paste the URL above and choose no authentication.</li></ol>
+    <p class="small">Developer mode isn't available on every ChatGPT plan, and on work accounts an admin may need to switch it on.</p>
   </details>
-  <details><summary>Claude Code, Cursor, VS Code, Gemini CLI</summary>
+  <details><summary>Claude Code</summary>
     <pre>claude mcp add --transport http gazette https://gazette-mcp.netlify.app/mcp</pre>
-    <p class="small">For other tools, add an HTTP MCP server with the same URL.</p>
+  </details>
+  <details><summary>Cursor, VS Code and other tools</summary>
+    <p>Add a new MCP server, choose the <strong>HTTP</strong> type, and paste the URL above.</p>
   </details>
 
   <h2>What your assistant can do</h2>
